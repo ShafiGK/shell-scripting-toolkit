@@ -61,6 +61,11 @@ printf "%s\n\n" "$BORDER"
 ## ── Alert (You can change this to test if script is working fine by adusting the threshold) ────────────────────────────────────────────────
 #THRESHOLD=90
 THRESHOLD=${1:-90}
+THRESHOLD=${1:-90}
+if ! [[ "$THRESHOLD" =~ ^[0-9]+$ ]] || [[ $THRESHOLD -lt 1 || $THRESHOLD -gt 99 ]]; then
+  echo "Input Error: Valid parameter should be numbers between 1-99. Eg. $0 "50" Please input valid number and retry......"
+  exit 2
+fi
 
 if [[ $PUSED -ge $THRESHOLD ]]; then
   printf "  ⚠️  ALERT: Memory usage is %d%% — above %d%% threshold!\n" \
