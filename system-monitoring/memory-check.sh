@@ -59,7 +59,8 @@ printf "\n  %-12s %10s  (%d%% used)\n" "Swap:" \
 printf "%s\n\n" "$BORDER"
 
 ## ── Alert (You can change this to test if script is working fine by adusting the threshold) ────────────────────────────────────────────────
-THRESHOLD=90
+#THRESHOLD=90
+THRESHOLD=${1:-90}
 
 if [[ $PUSED -ge $THRESHOLD ]]; then
   printf "  ⚠️  ALERT: Memory usage is %d%% — above %d%% threshold!\n" \
