@@ -33,7 +33,7 @@ chmod +x system-monitoring/disk-check.sh
 
 ## 🔧 Skills Demonstrated
 
-- Shell scripting (certified)
+- Shell scripting
 - Linux system administration
 - Automation patterns
 - Production-grade error handling
